@@ -1,3 +1,10 @@
+zulucrypt (4.7.5-2) unstable; urgency=medium
+
+  * Upload to unstable.
+  * Removed blank lines in the watch file.
+
+ -- Marcio de Souza Oliveira <m.desouza20@gmail.com>  Wed, 13 May 2015 00:16:50 -0300
+
 zulucrypt (4.7.5-1) experimental; urgency=low
 
   * Initial release (Closes: #703911)
