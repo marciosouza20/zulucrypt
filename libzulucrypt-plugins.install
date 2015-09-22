@@ -6,3 +6,4 @@ usr/lib/*/zuluCrypt/luks
 usr/lib/*/zuluCrypt/steghide
 usr/lib/*/zuluCrypt/tomb
 usr/lib/*/zuluCrypt/zuluCrypt-testKey
+usr/lib/*/zuluCrypt/hmac

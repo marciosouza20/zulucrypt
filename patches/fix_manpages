@@ -1,17 +1,165 @@
 Description: Fixes the manpages
 Author: Marcio de Souza Oliveira <m.desouza20@gmail.com>
-Last-Update: 2015-03-29
+Last-Update: 2015-06-27
 
-Index: zulucrypt-4.7.5/zuluCrypt-cli.1
+Index: zulucrypt-4.7.6/zuluMount-gui.1
 ===================================================================
---- zulucrypt-4.7.5.orig/zuluCrypt-cli.1
-+++ zulucrypt-4.7.5/zuluCrypt-cli.1
+--- zulucrypt-4.7.6.orig/zuluMount-gui.1
++++ zulucrypt-4.7.6/zuluMount-gui.1
+@@ -14,11 +14,11 @@ license  : GPLv2+
+ .br
+ options:
+ .br
+--d   path to where a volume to be auto unlocked/mounted is located
++\-d   path to where a volume to be auto unlocked/mounted is located
+ .br
+--m   tool to use to open a default file manager(default tool is xdg-open)
++\-m   tool to use to open a default file manager(default tool is xdg-open)
+ .br
+--e   start the application without showing the GUI
++\-e   start the application without showing the GUI
+ .br
+ .br
+ .SH LAST EDIT
+Index: zulucrypt-4.7.6/zuluMount-cli.1
+===================================================================
+--- zulucrypt-4.7.6.orig/zuluMount-cli.1
++++ zulucrypt-4.7.6/zuluMount-cli.1
+@@ -17,51 +17,51 @@ usage: see examples below
+ .br
+ options:
+ .br
+--m -- mount a volume : arguments: -d volume_path -z mount_point -e mode(rw/ro)
+-      -- additional arguments for crypto_LUKS,crypto_PLAIN,crypto_TCRYPT volumes, -p passphrase/-f keyfile
++\-m -- mount a volume : arguments: \-d volume_path \-z mount_point \-e mode(rw/ro)
++      -- additional arguments for crypto_LUKS,crypto_PLAIN,crypto_TCRYPT volumes, \-p passphrase/\-f keyfile
+ .br
+--z -- mount point component to append to "/run/media/private/$USER/"
++\-z -- mount point component to append to "/run/media/private/$USER/"
+ .br
+--u -- unmount a volume: arguments: -d volume_path
++\-u -- unmount a volume: arguments: \-d volume_path
+ .br
+--s -- print properties of an encrypted volume: arguments: -d volume_path
++\-s -- print properties of an encrypted volume: arguments: \-d volume_path
+ .br
+--o -- offset in sectors on where the volume starts in the volume.The volume is assumed to be plain type with this option
+-      and the option must be given when -u or -s arguments are used with a volume opened with this option
++\-o -- offset in sectors on where the volume starts in the volume.The volume is assumed to be plain type with this option
++      and the option must be given when \-u or \-s arguments are used with a volume opened with this option
+ .br
+--M -- this option will create a mount point in "/run/media/private/$USER/" and a publicly accessible "mirror" in "/run/media/public/'
++\-M -- this option will create a mount point in "/run/media/private/$USER/" and a publicly accessible "mirror" in "/run/media/public/'
+ .br
+--l -- print expanded list of all volumes
++\-l -- print expanded list of all volumes
+ .br
+--Y -- file system options
++\-Y -- file system options
+ .br
+--e -- mount options
++\-e -- mount options
+ .br
+--t -- volume type to assume when unlocking a volume.Use "vera" when unlocking a VeraCrypt volume.
++\-t -- volume type to assume when unlocking a volume.Use "vera" when unlocking a VeraCrypt volume.
+ .br
+--L -- must be used with -d,print properties of a volume specified by d option
++\-L -- must be used with \-d,print properties of a volume specified by d option
+ .br
+--P -- print a list of all volumes
++\-P -- print a list of all volumes
+ .br
+--A -- print a list of all volumes
++\-A -- print a list of all volumes
+ .br
+--S -- print a list of system volumes
++\-S -- print a list of system volumes
+ .br
+--N -- print a list of non system volumes
++\-N -- print a list of non system volumes
+ .br
+--E -- print a list of mounted volumes
++\-E -- print a list of mounted volumes
+ .br
+--D -- get a device node address from its mapper path( mapper paths are usually located in /dev/mapper ). Required argument: -d
++\-D -- get a device node address from its mapper path( mapper paths are usually located in /dev/mapper ). Required argument: \-d
+ .br
+--F -- path to truecrypt multiple keyfiles.Keyfiles are separated by "\\011" character sequence
++\-F -- path to truecrypt multiple keyfiles.Keyfiles are separated by "\\011" character sequence
+ .br
+ examples:
+ .br
+-mount a volume  : zuluMount-cli -m -d /dev/sdc1
++mount a volume  : zuluMount-cli \-m \-d /dev/sdc1
+ .br
+-unmount a volume: zuluMount-cli -u -d /dev/sdc1
++unmount a volume: zuluMount-cli \-u \-d /dev/sdc1
+ .br
+-mount and encrypted volume with a key "xyz" : zuluMount-cli -m -d /dev/sdc2 -p xyz
++mount and encrypted volume with a key "xyz" : zuluMount-cli \-m \-d /dev/sdc2 \-p xyz
+ .br
+ 
+ .SH COPYRIGHT
+Index: zulucrypt-4.7.6/zuluSafe-cli.1
+===================================================================
+--- zulucrypt-4.7.6.orig/zuluSafe-cli.1
++++ zulucrypt-4.7.6/zuluSafe-cli.1
+@@ -17,19 +17,19 @@ usage: see examples below
+ .br
+ options:
+ .br
+-To add a file to a wallet,run            : zuluSafe-cli --add     <path to file>
++To add a file to a wallet,run            : zuluSafe-cli \-\-add     <path to file>
+ .br
+-To delete a file in a wallet,run         : zuluSafe-cli --delete  <file name>
++To delete a file in a wallet,run         : zuluSafe-cli \-\-delete  <file name>
+ .br
+-To get a file from the wallet,run        : zuluSafe-cli --get     <file name>
++To get a file from the wallet,run        : zuluSafe-cli \-\-get     <file name>
+ .br
+-To add all files in a folder,run         : zuluSafe-cli --add-all <folder path>
++To add all files in a folder,run         : zuluSafe-cli \-\-add\-all <folder path>
+ .br
+-To get a list of files in the wallet,run : zuluSafe-cli --list
++To get a list of files in the wallet,run : zuluSafe-cli \-\-list
+ .br
+-To get all files from the wallet,run     : zuluSafe-cli --get-all
++To get all files from the wallet,run     : zuluSafe-cli \-\-get\-all
+ .br
+-To get a list of wallets,run             : zuluSafe-cli --wallets
++To get a list of wallets,run             : zuluSafe-cli \-\-wallets
+ .br
+ 
+ .SH COPYRIGHT
+Index: zulucrypt-4.7.6/zuluCrypt-gui.1
+===================================================================
+--- zulucrypt-4.7.6.orig/zuluCrypt-gui.1
++++ zulucrypt-4.7.6/zuluCrypt-gui.1
+@@ -14,11 +14,11 @@ license  : GPLv2+
+ .br
+ options:
+ .br
+--d   path to where a volume to be auto unlocked/mounted is located
++\-d   path to where a volume to be auto unlocked/mounted is located
+ .br
+--m   tool to use to open a default file manager(default tool is xdg-open)
++\-m   tool to use to open a default file manager(default tool is xdg-open)
+ .br
+--e   start the application without showing the GUI
++\-e   start the application without showing the GUI
+ .br
+ .br
+ .SH LAST EDIT
+Index: zulucrypt-4.7.6/zuluCrypt-cli.1
+===================================================================
+--- zulucrypt-4.7.6.orig/zuluCrypt-cli.1
++++ zulucrypt-4.7.6/zuluCrypt-cli.1
 @@ -18,63 +18,63 @@ meaning of symbols:
  .br
  {}  = not allowed option
  .br
 -zuluCrypt-cli --test
-+zuluCrypt-cli \--test
++zuluCrypt-cli \-\-test
  .br
 -zuluCrypt-cli -E <d> <e> <p|f|h>
 +zuluCrypt-cli \-E <d> <e> <p|f|h>
@@ -245,187 +393,3 @@ Index: zulucrypt-4.7.5/zuluCrypt-cli.1
  .br
  
  .SH COPYRIGHT
-Index: zulucrypt-4.7.5/zuluCrypt-gui.1
-===================================================================
---- zulucrypt-4.7.5.orig/zuluCrypt-gui.1
-+++ zulucrypt-4.7.5/zuluCrypt-gui.1
-@@ -4,22 +4,38 @@
- .br
- .SH NAME
- zuluCrypt-gui - Graphical front end for zuluCrypt-cli
-+
-+.SH SYNOPSIS
-+zuluCrypt-gui - Graphical front end for zuluCrypt-cli
- .br
--.SH SUMMARY
--zuluCrypt-gui is a GUI front end to zuluCrypt-cli
--.br
--copyright: 2011-2013 Ink Francis,mhogomchungu@gmail.com
--.br
--license  : GPLv2+
--.br
--options:
--.br
---d   path to where a volume to be auto unlocked/mounted is located
--.br
---m   tool to use to open a default file manager(default tool is xdg-open)
--.br
---e   start the application without showing the GUI
--.br
-+.SH DESCRIPTION
-+zuluCrypt-gui is a GUI front end to zuluCrypt-cli. It can be run with the options:
-+
-+.br
-+\-d   path to where a volume to be auto unlocked/mounted is located
-+.br
-+\-m   tool to use to open a default file manager(default tool is xdg-open)
-+.br
-+\-e   start the application without showing the GUI
-+.br
-+.SH COPYRIGHT
-+Copyright (c) 2011-2013
-+.br
-+name : Francis Banyikwa
-+.br
-+email: mhogomchungu@gmail.com
-+.br
-+
-+This program is free software: you can redistribute it and/or modify
-+it under the terms of the GNU General Public License as published by
-+the Free Software Foundation, either version 2 of the License, or
-+(at your option) any later version.
-+This program is distributed in the hope that it will be useful,
-+but WITHOUT ANY WARRANTY; without even the implied warranty of
-+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-+GNU General Public License for more details.
-+You should have received a copy of the GNU General Public License
-+along with this program.  If not, see <http://www.gnu.org/licenses/>.
- .br
- .SH LAST EDIT
- Last change: Mon Apr  8 19:59:36 EDT 2013
-Index: zulucrypt-4.7.5/zuluMount-cli.1
-===================================================================
---- zulucrypt-4.7.5.orig/zuluMount-cli.1
-+++ zulucrypt-4.7.5/zuluMount-cli.1
-@@ -17,49 +17,49 @@ usage: see examples below
- .br
- options:
- .br
---m -- mount a volume : arguments: -d volume_path -z mount_point -e mode(rw/ro)
--      -- additional arguments for crypto_LUKS,crypto_PLAIN,crypto_TCRYPT volumes, -p passphrase/-f keyfile
-+\-m \-- mount a volume : arguments: \-d volume_path \-z mount_point \-e mode(rw/ro)
-+      \-- additional arguments for crypto_LUKS,crypto_PLAIN,crypto_TCRYPT volumes, \-p passphrase/\-f keyfile
- .br
---z -- mount point component to append to "/run/media/private/$USER/"
-+\-z \-- mount point component to append to "/run/media/private/$USER/"
- .br
---u -- unmount a volume: arguments: -d volume_path
-+\-u \-- unmount a volume: arguments: \-d volume_path
- .br
---s -- print properties of an encrypted volume: arguments: -d volume_path
-+\-s \-- print properties of an encrypted volume: arguments: \-d volume_path
- .br
---o -- offset in sectors on where the volume starts in the volume.The volume is assumed to be plain type with this option
--      and the option must be given when -u or -s arguments are used with a volume opened with this option
-+\-o \-- offset in sectors on where the volume starts in the volume.The volume is assumed to be plain type with this option
-+      and the option must be given when \-u or \-s arguments are used with a volume opened with this option
- .br
---M -- this option will create a mount point in "/run/media/private/$USER/" and a publicly accessible "mirror" in "/run/media/public/'
-+\-M \-- this option will create a mount point in "/run/media/private/$USER/" and a publicly accessible "mirror" in "/run/media/public/'
- .br
---l -- print expanded list of all volumes
-+\-l \-- print expanded list of all volumes
- .br
---Y -- file system options
-+\-Y \-- file system options
- .br
---e -- mount options
-+\-e \-- mount options
- .br
---L -- must be used with -d,print properties of a volume specified by d option
-+\-L \-- must be used with \-d,print properties of a volume specified by d option
- .br
---P -- print a list of all volumes
-+\-P \-- print a list of all volumes
- .br
---A -- print a list of all volumes
-+\-A \-- print a list of all volumes
- .br
---S -- print a list of system volumes
-+\-S \-- print a list of system volumes
- .br
---N -- print a list of non system volumes
-+\-N \-- print a list of non system volumes
- .br
---E -- print a list of mounted volumes
-+\-E \-- print a list of mounted volumes
- .br
---D -- get a device node address from its mapper path( mapper paths are usually located in /dev/mapper ). Required argument: -d
-+\-D \-- get a device node address from its mapper path( mapper paths are usually located in /dev/mapper ). Required argument: \-d
- .br
---F -- path to truecrypt multiple keyfiles.Keyfiles are separated by "\\011" character sequence
-+\-F \-- path to truecrypt multiple keyfiles.Keyfiles are separated by "\\011" character sequence
- .br
- examples:
- .br
--mount a volume  : zuluMount-cli -m -d /dev/sdc1
-+mount a volume  : zuluMount-cli \-m \-d /dev/sdc1
- .br
--unmount a volume: zuluMount-cli -u -d /dev/sdc1
-+unmount a volume: zuluMount-cli \-u \-d /dev/sdc1
- .br
--mount and encrypted volume with a key "xyz" : zuluMount-cli -m -d /dev/sdc2 -p xyz
-+mount and encrypted volume with a key "xyz" : zuluMount-cli \-m \-d /dev/sdc2 \-p xyz
- .br
- 
- .SH COPYRIGHT
-Index: zulucrypt-4.7.5/zuluSafe-cli.1
-===================================================================
---- zulucrypt-4.7.5.orig/zuluSafe-cli.1
-+++ zulucrypt-4.7.5/zuluSafe-cli.1
-@@ -17,19 +17,19 @@ usage: see examples below
- .br
- options:
- .br
--To add a file to a wallet,run            : zuluSafe-cli --add     <path to file>
-+To add a file to a wallet,run            : zuluSafe-cli \--add     <path to file>
- .br
--To delete a file in a wallet,run         : zuluSafe-cli --delete  <file name>
-+To delete a file in a wallet,run         : zuluSafe-cli \--delete  <file name>
- .br
--To get a file from the wallet,run        : zuluSafe-cli --get     <file name>
-+To get a file from the wallet,run        : zuluSafe-cli \--get     <file name>
- .br
--To add all files in a folder,run         : zuluSafe-cli --add-all <folder path>
-+To add all files in a folder,run         : zuluSafe-cli \--add-all <folder path>
- .br
--To get a list of files in the wallet,run : zuluSafe-cli --list
-+To get a list of files in the wallet,run : zuluSafe-cli \--list
- .br
--To get all files from the wallet,run     : zuluSafe-cli --get-all
-+To get all files from the wallet,run     : zuluSafe-cli \--get-all
- .br
--To get a list of wallets,run             : zuluSafe-cli --wallets
-+To get a list of wallets,run             : zuluSafe-cli \--wallets
- .br
- 
- .SH COPYRIGHT
-Index: zulucrypt-4.7.5/zuluMount-gui.1
-===================================================================
---- zulucrypt-4.7.5.orig/zuluMount-gui.1
-+++ zulucrypt-4.7.5/zuluMount-gui.1
-@@ -14,11 +14,11 @@ license  : GPLv2+
- .br
- options:
- .br
---d   path to where a volume to be auto unlocked/mounted is located
-+\-d   path to where a volume to be auto unlocked/mounted is located
- .br
---m   tool to use to open a default file manager(default tool is xdg-open)
-+\-m   tool to use to open a default file manager(default tool is xdg-open)
- .br
---e   start the application without showing the GUI
-+\-e   start the application without showing the GUI
- .br
- .br
- .SH LAST EDIT

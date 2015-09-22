@@ -1,69 +1,69 @@
 Description: Fixes spelling errors
 Author: Marcio de Souza Oliveira <m.desouza20@gmail.com>
-Last-Update: 2015-03-29
+Last-Update: 2015-06-27
 
-Index: zulucrypt-4.7.5/zuluCrypt-cli/bin/main.c
+Index: zulucrypt-4.7.6/zuluCrypt-cli/bin/main.c
 ===================================================================
---- zulucrypt-4.7.5.orig/zuluCrypt-cli/bin/main.c
-+++ zulucrypt-4.7.5/zuluCrypt-cli/bin/main.c
-@@ -529,7 +529,7 @@ int main( int argc,char * argv[] )
+--- zulucrypt-4.7.6.orig/zuluCrypt-cli/bin/main.c
++++ zulucrypt-4.7.6/zuluCrypt-cli/bin/main.c
+@@ -542,7 +542,7 @@ int main( int argc,char * argv[] )
  		 */
  		switch( zuluCryptGetDeviceFileProperties( device,&fd,&fd1,&dev,uid ) ){
  			case 0 : break ;
--			case 1 : return zuluExit( 111,stl,stx,env,gettext( "ERROR: devices in /dev/shm/ path is not suppored" ) ) ;
-+			case 1 : return zuluExit( 111,stl,stx,env,gettext( "ERROR: devices in /dev/shm/ path is not supported" ) ) ;
- 			case 2 : return zuluExit( 112,stl,stx,env,gettext( "ERROR: given path is a directory" ) ) ;
- 			case 3 : return zuluExit( 113,stl,stx,env,gettext( "ERROR: a file can have only one hard link" ) ) ;
- 			case 4 : return zuluExit( 113,stl,stx,env,gettext( "ERROR: insufficient privilges to access the device" ) ) ;
-Index: zulucrypt-4.7.5/zuluCrypt-gui/createfile.cpp
+-			case 1 : return zuluExit( 111,stl,stx,env,gettext( "ERROR: Devices in /dev/shm/ path is not suppored" ) ) ;
++			case 1 : return zuluExit( 111,stl,stx,env,gettext( "ERROR: Devices in /dev/shm/ path is not supported" ) ) ;
+ 			case 2 : return zuluExit( 112,stl,stx,env,gettext( "ERROR: Given path is a directory" ) ) ;
+ 			case 3 : return zuluExit( 113,stl,stx,env,gettext( "ERROR: A file can have only one hard link" ) ) ;
+ 			case 4 : return zuluExit( 113,stl,stx,env,gettext( "ERROR: Insufficient privilges to access the device" ) ) ;
+Index: zulucrypt-4.7.6/zuluCrypt-gui/createfile.cpp
 ===================================================================
---- zulucrypt-4.7.5.orig/zuluCrypt-gui/createfile.cpp
-+++ zulucrypt-4.7.5/zuluCrypt-gui/createfile.cpp
+--- zulucrypt-4.7.6.orig/zuluCrypt-gui/createfile.cpp
++++ zulucrypt-4.7.6/zuluCrypt-gui/createfile.cpp
 @@ -162,7 +162,7 @@ void createfile::pbCreate()
- 		return msg.ShowUIOK( tr( "ERROR!" ),tr( "file with the same name and at the destination folder already exist" ) ) ;
+ 		return msg.ShowUIOK( tr( "ERROR!" ),tr( "File with the same name and at the destination folder already exist" ) ) ;
  	}
  	if( !utility::canCreateFile( filePath ) ){
--		msg.ShowUIOK( tr( "ERROR!" ),tr( "you dont seem to have writing access to the destination folder" ) ) ;
-+		msg.ShowUIOK( tr( "ERROR!" ),tr( "you don't seem to have writing access to the destination folder" ) ) ;
+-		msg.ShowUIOK( tr( "ERROR!" ),tr( "You dont seem to have writing access to the destination folder" ) ) ;
++		msg.ShowUIOK( tr( "ERROR!" ),tr( "You don't seem to have writing access to the destination folder" ) ) ;
  		m_ui->lineEditFilePath->setFocus() ;
  		return ;
  	}
-Index: zulucrypt-4.7.5/zuluCrypt-gui/createkeyfile.cpp
+Index: zulucrypt-4.7.6/zuluMount-cli/main.c
 ===================================================================
---- zulucrypt-4.7.5.orig/zuluCrypt-gui/createkeyfile.cpp
-+++ zulucrypt-4.7.5/zuluCrypt-gui/createkeyfile.cpp
-@@ -156,7 +156,7 @@ void createkeyfile::pbCreate()
- 		return msg.ShowUIOK( tr( "ERROR!" ),tr( "file with the same name and at the destination folder already exist" ) ) ;
- 	}
- 	if( !utility::canCreateFile( path ) ){
--		msg.ShowUIOK( tr( "ERROR!" ),tr( "you dont seem to have writing access to the destination folder" ) ) ;
-+		msg.ShowUIOK( tr( "ERROR!" ),tr( "you don't seem to have writing access to the destination folder" ) ) ;
- 		m_ui->lineEditPath->setFocus() ;
- 		return ;
- 	}
-Index: zulucrypt-4.7.5/zuluMount-cli/main.c
-===================================================================
---- zulucrypt-4.7.5.orig/zuluMount-cli/main.c
-+++ zulucrypt-4.7.5/zuluMount-cli/main.c
-@@ -427,7 +427,7 @@ Possible reasons for getting the error a
+--- zulucrypt-4.7.6.orig/zuluMount-cli/main.c
++++ zulucrypt-4.7.6/zuluMount-cli/main.c
+@@ -435,7 +435,7 @@ Possible reasons for getting the error a
  				 close( fd ) ;
  			 }
  			 return status ;
--		case 1 : printf( gettext( "ERROR: devices in /dev/shm path is not suppored\n" ) ) ;	return 220 ;
-+		case 1 : printf( gettext( "ERROR: devices in /dev/shm path is not supported\n" ) ) ;	return 220 ;
- 		case 2 : printf( gettext( "ERROR: given path is a directory\n" ) ) ;  			return 221 ;
- 		case 3 : printf( gettext( "ERROR: a file can have only one hard link\n" ) ) ;		return 222 ;
- 		case 4 : printf( gettext( "ERROR: insufficient privilges to access the device\n" ) ) ; 	return 223 ;
-Index: zulucrypt-4.7.5/zuluCrypt-cli/bin/create_volumes.c
+-		case 1 : printf( gettext( "ERROR: Devices in /dev/shm path is not suppored\n" ) ) ;	return 220 ;
++		case 1 : printf( gettext( "ERROR: Devices in /dev/shm path is not supported\n" ) ) ;	return 220 ;
+ 		case 2 : printf( gettext( "ERROR: Given path is a directory\n" ) ) ;  			return 221 ;
+ 		case 3 : printf( gettext( "ERROR: A file can have only one hard link\n" ) ) ;		return 222 ;
+ 		case 4 : printf( gettext( "ERROR: Insufficient privilges to access the device\n" ) ) ; 	return 223 ;
+Index: zulucrypt-4.7.6/zuluCrypt-cli/bin/create_volumes.c
 ===================================================================
---- zulucrypt-4.7.5.orig/zuluCrypt-cli/bin/create_volumes.c
-+++ zulucrypt-4.7.5/zuluCrypt-cli/bin/create_volumes.c
+--- zulucrypt-4.7.6.orig/zuluCrypt-cli/bin/create_volumes.c
++++ zulucrypt-4.7.6/zuluCrypt-cli/bin/create_volumes.c
 @@ -69,7 +69,7 @@ static int zuluExit_1( const char * type
- 	printf( gettext( "SUCCESS: volume created successfully\n" ) ) ;
+ 	printf( gettext( "SUCCESS: Volume created successfully\n" ) ) ;
  
- 	if( StringAtLeastOneMatch_1( type,"luks","tcrypt","truecrypt",NULL ) ){
--		printf( gettext( "\ncreating a backup of the \"%s\" volume header is strongly adviced.\n" ),type ) ;
-+		printf( gettext( "\ncreating a backup of the \"%s\" volume header is strongly advised.\n" ),type ) ;
+ 	if( StringAtLeastOneMatch_1( type,"luks","tcrypt","truecrypt","veracrypt","vera","vcrypt",NULL ) ){
+-		printf( gettext( "\nCreating a backup of the \"%s\" volume header is strongly adviced.\n" ),type ) ;
++		printf( gettext( "\nCreating a backup of the \"%s\" volume header is strongly advised.\n" ),type ) ;
  		printf( gettext( "Please read documentation on why this is important\n\n" ) ) ;
  	}
  	return 0 ;
+Index: zulucrypt-4.7.6/zuluCrypt-gui/createkeyfile.cpp
+===================================================================
+--- zulucrypt-4.7.6.orig/zuluCrypt-gui/createkeyfile.cpp
++++ zulucrypt-4.7.6/zuluCrypt-gui/createkeyfile.cpp
+@@ -156,7 +156,7 @@ void createkeyfile::pbCreate()
+ 		return msg.ShowUIOK( tr( "ERROR!" ),tr( "File with the same name and at the destination folder already exist" ) ) ;
+ 	}
+ 	if( !utility::canCreateFile( path ) ){
+-		msg.ShowUIOK( tr( "ERROR!" ),tr( "You dont seem to have writing access to the destination folder" ) ) ;
++		msg.ShowUIOK( tr( "ERROR!" ),tr( "You don't seem to have writing access to the destination folder" ) ) ;
+ 		m_ui->lineEditPath->setFocus() ;
+ 		return ;
+ 	}

@@ -1,3 +1,19 @@
+zulucrypt (4.7.6-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Changed the homepage of upstream.
+  * Added new plugin hmac in package libzulucrypt-plugins.
+  * Updated the d/control to insert reference the hmac
+    plugin.
+  * Created new symbol files for libzulucrypt1.2.0,
+    libzuluCrypt-exe.so.1.2.0,libzulucryptpluginmanager1.0.0.
+  * Updated the files zulu*-gui-pkexec to run with
+    user ID that started application.
+  * Added zuluCrypt.pdf in package zulucrypt-gui.
+  * Updated the copyright file.
+
+ -- Marcio de Souza Oliveira <m.desouza20@gmail.com>  Tue, 23 Jun 2015 22:33:08 -0300
+
 zulucrypt (4.7.5-2) unstable; urgency=medium
 
   * Upload to unstable.

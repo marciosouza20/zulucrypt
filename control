@@ -19,7 +19,7 @@ Build-Depends: debhelper (>= 9),
  cmake,
  bzip2
 Standards-Version: 3.9.6
-Homepage: https://code.google.com/p/zulucrypt/
+Homepage: http://mhogomchungu.github.io/zuluCrypt
 Vcs-Git: git://github.com/marciosouza20/zulucrypt.git
 Vcs-Browser: http://github.com/marciosouza20/zulucrypt.git
 
@@ -186,6 +186,7 @@ Description: collection of plugins for zulucrypt
  .
  Included plugins are:
   gpg
+  hmac
   keydialog-qt
   keykeyfile
   keyring
