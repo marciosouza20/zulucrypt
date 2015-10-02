@@ -10,7 +10,6 @@ Build-Depends: debhelper (>= 9),
  libgcrypt20-dev,
  libqtkeychain0,
  qtkeychain-dev,
- libtcplay-dev,
  libblkid-dev,
  libudev-dev,
  libqt4-dev,
@@ -35,7 +34,7 @@ Description: tool for encrypting volumes
  to cryptsetup and tcplay and it is a tool that
  make it easy to manage LUKS, PLAIN and TRUECRYPT
  encrypted volumes. With one command you can encrypt
- a volume. Without zullucrypt-cli would be multiple
+ a volume. Without zulucrypt-cli would be multiple
  commands needed to achieve the same result.
 
 Package: zulumount-cli
@@ -48,7 +47,7 @@ Description: tool that manages encrypted volumes
  .
  zulumount-cli is a command line interface that has
  a primary mission of opening and closing encrypted
- volumes as well as mounting and unmounting unecrypted
+ volumes as well as mounting and unmounting unencrypted
  volumes and opened encrypted ones. Its primary
  purpose is to do what tools like udisks does.
 
@@ -84,7 +83,7 @@ Description: cli that manages encrypted volumes
  and managing volumes encrypted with luks, plain
  and truecrypt.
  .
- zulusafe-cli is a tool reponsible for the safe
+ zulusafe-cli is a tool responsible for the safe
  storage files in a wallet. Added files to the
  wallet will be stored in a secured file located
  at "~/.config/lxqt/wallets/zuluSafe/YYY.lwt"
