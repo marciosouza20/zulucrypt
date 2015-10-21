@@ -1,3 +1,2 @@
 #!/bin/sh
 pkexec "/usr/bin/zuluMount-gui" -K `id --user` "$@"
-

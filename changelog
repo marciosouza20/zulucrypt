@@ -1,3 +1,15 @@
+zulucrypt (4.7.7-1) experimental; urgency=medium
+
+  * New upstream release.
+  * debian/copyright:
+    - update to new source url.
+    - updated file.
+  * debian/patches: updated fix_spelling.
+  * Created new symbol files for libzulucrypt1.2.0,
+    libzuluCrypt-exe.so.1.2.0,libzulucryptpluginmanager1.0.0.
+
+ -- Marcio de Souza Oliveira <m.desouza20@gmail.com>  Sat, 03 Oct 2015 18:36:12 -0300
+
 zulucrypt (4.7.6-2) unstable; urgency=medium
 
   * Updated the d/control to remove libtcplay-dev the Build-Depends.
