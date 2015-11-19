@@ -1,3 +1,18 @@
+zulucrypt (4.7.7-3) unstable; urgency=medium
+
+  * Rebuild use QT5.
+  * debian/control:
+      - The libqt4-dev has been removed the Build-Depends.
+      - The qtbase5-dev, qtchooser, qt5-qmake and
+      qtbase5-dev-tools has been inserted in Build-Depends.
+  * debian/patches: 
+      - created fix_mkfs to fix problem with mkfs not found.
+      - Thank to Francis Banyikwa by patch fix_mkfs.
+  * debian/rules:
+      - uptated to use QT5 in zuluCrypt-gui and zuluMount-gui.
+
+ -- Marcio de Souza Oliveira <m.desouza20@gmail.com>  Wed, 18 Nov 2015 22:31:16 -0200
+
 zulucrypt (4.7.7-2) unstable; urgency=medium
 
   * Upload to unstable.

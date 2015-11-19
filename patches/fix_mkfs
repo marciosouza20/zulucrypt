@@ -1,0 +1,32 @@
+Description: fixes problems with mkfs not found
+Author: Marcio de Souza Oliveira <m.desouza20@gmail.com>
+Last-Update: 2015-18-11
+Index: zulucrypt-4.7.7/zuluCrypt-cli/lib/create_volume.c
+===================================================================
+--- zulucrypt-4.7.7.orig/zuluCrypt-cli/lib/create_volume.c
++++ zulucrypt-4.7.7/zuluCrypt-cli/lib/create_volume.c
+@@ -25,6 +25,7 @@
+ #include <unistd.h>
+ #include <signal.h>
+ #include <stdio.h>
++#include <limits.h>
+ 
+ static int zuluExit( int st,string_t m )
+ {
+@@ -38,6 +39,7 @@ int zuluCryptCreateFileSystemInAVolume(
+ 	char * e = NULL ;
+ 	process_t p ;
+ 
++	char * const env[ 2 ] = { "PATH=/bin:/usr/bin:/sbin:/usr/sbin",NULL } ;
+ 	/*
+ 	 * zulucryptFileSystemIsSupported() is defined in mount_fs_options.c
+ 	 */
+@@ -47,6 +49,8 @@ int zuluCryptCreateFileSystemInAVolume(
+ 
+ 	p = Process( ZULUCRYPTmkfs,NULL ) ;
+ 
++ProcessSetEnvironmentalVariable( p,env ) ;
++
+ 	if( StringAtLeastOneMatch_1( fs,"ext2","ext3","ext4",NULL ) ){
+ 
+ 		ProcessSetArgumentList( p,"-t",fs,"-m","1",device_mapper,NULL ) ;
