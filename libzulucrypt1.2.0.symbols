@@ -316,8 +316,8 @@ libzuluCrypt.so.1.2.0 libzulucrypt1.2.0 #MINVER#
  zuluCryptGetMountEntry_1@Base 4.7.7
  zuluCryptGetMountOptionsFromFstab@Base 4.7.7
  zuluCryptGetMountPointFromPath@Base 4.7.7
- zuluCryptGetMoutedListFromMountInfo@Base 4.7.7
- zuluCryptGetMoutedListFromMountInfo_1@Base 4.7.7
+ zuluCryptGetMoutedList@Base 4.8.0
+ zuluCryptGetMoutedList_1@Base 4.8.0
  zuluCryptGetUUIDFromMapper@Base 4.7.7
  zuluCryptGetUserHomePath@Base 4.7.7
  zuluCryptGetUserName@Base 4.7.7
@@ -329,6 +329,7 @@ libzuluCrypt.so.1.2.0 libzulucrypt1.2.0 #MINVER#
  zuluCryptMapperPrefix@Base 4.7.7
  zuluCryptModifyTcryptHeader@Base 4.7.7
  zuluCryptMountHasNotAllowedFileSystemOptions@Base 4.7.7
+ zuluCryptMountPointIsActive@Base 4.8.0
  zuluCryptMountVolume@Base 4.7.7
  zuluCryptOpenLuks@Base 4.7.7
  zuluCryptOpenLuks_1@Base 4.7.7

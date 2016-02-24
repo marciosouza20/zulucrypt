@@ -21,6 +21,7 @@ libzuluCrypt-exe.so.1.2.0 libzulucrypt-exe1.2.0 #MINVER#
  zuluCryptCheckOpenedMapper@Base 4.7.7
  zuluCryptClearDeadMappers@Base 4.7.7
  zuluCryptCreateKeyFiles@Base 4.7.7
+ zuluCryptCreateMountPath@Base 4.8.0
  zuluCryptCreateMountPoint@Base 4.7.7
  zuluCryptDecryptFile@Base 4.7.7
  zuluCryptDeleteKeyFiles@Base 4.7.7
@@ -54,6 +55,7 @@ libzuluCrypt-exe.so.1.2.0 libzulucrypt-exe1.2.0 #MINVER#
  zuluCryptPartitions@Base 4.7.7
  zuluCryptPrintPartitionProperties@Base 4.7.7
  zuluCryptPrintPartitions@Base 4.7.7
+ zuluCryptReuseMountPoint@Base 4.8.0
  zuluCryptRunTest@Base 4.7.7
  zuluCryptSecurityConvertUID@Base 4.7.7
  zuluCryptSecurityDropElevatedPrivileges@Base 4.7.7

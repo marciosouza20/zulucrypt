@@ -1,3 +1,26 @@
+zulucrypt (4.8.0-1) experimental; urgency=medium
+
+  * New upstream release.
+  * debian/control:
+      - Bumped Standards-Version to 3.9.7.
+      - Updated vcs-browser field.
+      - Updated vcs-git field.
+  * debian/patches:
+      - Removed the fix_mkfs patch because upstream fixed
+      the problem.
+      - Updated fix_spelling.
+      - Updated fix_manpage.
+  * debian/watch:
+      - Updated for version 4.
+  * Add the de_DE.qm translation file in package zulucrypt-gui.
+  * Created new symbol files for libzulucrypt1.2.0,
+    libzuluCrypt-exe.so.1.2.0,libzulucryptpluginmanager1.0.0.
+  * Updated the files zulu*-gui-pkexec to run without user ID
+    that started application because in version 4.8.0 not
+    working.
+
+ -- Marcio de Souza Oliveira <m.desouza20@gmail.com>  Wed, 03 Feb 2016 10:08:11 -0200
+
 zulucrypt (4.7.7-3) unstable; urgency=medium
 
   * Rebuild use QT5.
@@ -5,7 +28,7 @@ zulucrypt (4.7.7-3) unstable; urgency=medium
       - The libqt4-dev has been removed the Build-Depends.
       - The qtbase5-dev, qtchooser, qt5-qmake and
       qtbase5-dev-tools has been inserted in Build-Depends.
-  * debian/patches: 
+  * debian/patches:
       - created fix_mkfs to fix problem with mkfs not found.
       - Thank to Francis Banyikwa by patch fix_mkfs.
   * debian/rules:

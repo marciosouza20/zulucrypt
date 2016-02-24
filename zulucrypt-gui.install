@@ -1,6 +1,7 @@
 usr/bin/zuluCrypt-gui
 usr/share/man/man1/zuluCrypt-gui.1
 usr/share/zuluCrypt/zuluCrypt.pdf usr/share/zuluCrypt/
+usr/share/zuluCrypt/translations/zuluCrypt-gui/de_DE.qm usr/share/zuluCrypt/translations/zuluCrypt-gui/
 debian/icons/zuluCrypt.xpm usr/share/pixmaps
 debian/zulucrypt-gui.desktop usr/share/applications
 debian/org.debian.pkexec.zulucrypt-gui.policy usr/share/polkit-1/actions/

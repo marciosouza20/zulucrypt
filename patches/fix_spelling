@@ -1,60 +1,60 @@
 Description: Fixes spelling errors
 Author: Marcio de Souza Oliveira <m.desouza20@gmail.com>
-Last-Update: 2015-10-03
+Last-Update: 2016-02-14
 
-Index: zulucrypt-4.7.7/zuluCrypt-cli/bin/create_volumes.c
+Index: zulucrypt-4.8.0/zuluCrypt-gui/createkeyfile.cpp
 ===================================================================
---- zulucrypt-4.7.7.orig/zuluCrypt-cli/bin/create_volumes.c
-+++ zulucrypt-4.7.7/zuluCrypt-cli/bin/create_volumes.c
-@@ -67,7 +67,7 @@ static int zuluExit_1( const char * type
- 	printf( gettext( "SUCCESS: Volume created successfully\n" ) ) ;
+--- zulucrypt-4.8.0.orig/zuluCrypt-gui/createkeyfile.cpp
++++ zulucrypt-4.8.0/zuluCrypt-gui/createkeyfile.cpp
+@@ -160,7 +160,7 @@ void createkeyfile::pbCreate()
+ 	}
+ 	if( !utility::canCreateFile( path ) ){
  
- 	if( StringAtLeastOneMatch_1( type,"luks","tcrypt","truecrypt","veracrypt","vera","vcrypt",NULL ) ){
--		printf( gettext( "\nCreating a backup of the \"%s\" volume header is strongly adviced.\n" ),type ) ;
-+		printf( gettext( "\nCreating a backup of the \"%s\" volume header is strongly advised.\n" ),type ) ;
- 		printf( gettext( "Please read documentation on why this is important\n\n" ) ) ;
+-		msg.ShowUIOK( tr( "ERROR!" ),tr( "You dont seem to have writing access to the destination folder" ) ) ;
++		msg.ShowUIOK( tr( "ERROR!" ),tr( "You don't seem to have writing access to the destination folder" ) ) ;
+ 		m_ui->lineEditPath->setFocus() ;
+ 		return ;
+ 	}
+Index: zulucrypt-4.8.0/zuluCrypt-gui/cryptfiles.cpp
+===================================================================
+--- zulucrypt-4.8.0.orig/zuluCrypt-gui/cryptfiles.cpp
++++ zulucrypt-4.8.0/zuluCrypt-gui/cryptfiles.cpp
+@@ -257,7 +257,7 @@ void cryptfiles::pbCreate()
+ 	}
+ 	if( !utility::canCreateFile( dest ) ){
+ 
+-		return msg.ShowUIOK( tr( "ERROR!" ),tr( "You dont seem to have writing access to the destination folder" ) ) ;
++		return msg.ShowUIOK( tr( "ERROR!" ),tr( "You don't seem to have writing access to the destination folder" ) ) ;
  	}
  
-Index: zulucrypt-4.7.7/zuluCrypt-cli/bin/main.c
+ 	auto key_1 = m_ui->lineEditPass_1->text() ;
+Index: zulucrypt-4.8.0/zuluCrypt-gui/utility.cpp
 ===================================================================
---- zulucrypt-4.7.7.orig/zuluCrypt-cli/bin/main.c
-+++ zulucrypt-4.7.7/zuluCrypt-cli/bin/main.c
-@@ -565,7 +565,7 @@ int main( int argc,char * argv[] )
- 		 */
- 		switch( zuluCryptGetDeviceFileProperties( device,&fd,&fd1,&dev,uid ) ){
- 			case 0 : break ;
--			case 1 : return zuluExit( 111,stl,stx,env,gettext( "ERROR: Devices in /dev/shm/ path is not suppored" ) ) ;
-+			case 1 : return zuluExit( 111,stl,stx,env,gettext( "ERROR: Devices in /dev/shm/ path is not supported" ) ) ;
- 			case 2 : return zuluExit( 112,stl,stx,env,gettext( "ERROR: Given path is a directory" ) ) ;
- 			case 3 : return zuluExit( 113,stl,stx,env,gettext( "ERROR: A file can have only one hard link" ) ) ;
- 			case 4 : return zuluExit( 113,stl,stx,env,gettext( "ERROR: Insufficient privilges to access the device" ) ) ;
-Index: zulucrypt-4.7.7/zuluCrypt-gui/TRANSLATIONS
+--- zulucrypt-4.8.0.orig/zuluCrypt-gui/utility.cpp
++++ zulucrypt-4.8.0/zuluCrypt-gui/utility.cpp
+@@ -1425,7 +1425,7 @@ int utility::pluginKey( QDialog * w,QStr
+ 	}else if( p == "gpg" ){
+ 
+ 		pluginType   = plugins::plugin::gpg ;
+-		pluginString = QObject::tr( "gpg plugin.\n\nThis plugin retrives a key locked in a gpg file with a symmetric key" ) ;
++		pluginString = QObject::tr( "gpg plugin.\n\nThis plugin retrieves a key locked in a gpg file with a symmetric key" ) ;
+ 
+ 		if( utility::pathExists( "/usr/bin/gpg" ) ){
+ 
+@@ -1559,7 +1559,7 @@ void utility::setLocalizationLanguage( b
+ 
+ 		if( r == "en_US" ){
+ 			/*
+-			 * english_US language,its the default and hence dont load anything
++			 * english_US language,its the default and hence don't load anything
+ 			 */
+ 		}else{
+ 			translator->load( r.constData(),e ) ;
+Index: zulucrypt-4.8.0/zuluCrypt-gui/createfile.cpp
 ===================================================================
---- zulucrypt-4.7.7.orig/zuluCrypt-gui/TRANSLATIONS
-+++ zulucrypt-4.7.7/zuluCrypt-gui/TRANSLATIONS
-@@ -362,7 +362,7 @@ only root user or members of group zuluc
-     </message>
-     <message>
-         <location filename="createfile.cpp" line="159"/>
--        <source>you dont seem to have writing access to the destination folder</source>
-+        <source>you don't seem to have writing access to the destination folder</source>
-         <translation type="unfinished"></translation>
-     </message>
-     <message>
-@@ -468,7 +468,7 @@ only root user or members of group zuluc
-     </message>
-     <message>
-         <location filename="createkeyfile.cpp" line="137"/>
--        <source>you dont seem to have writing access to the destination folder</source>
-+        <source>you don't seem to have writing access to the destination folder</source>
-         <translation type="unfinished"></translation>
-     </message>
-     <message>
-Index: zulucrypt-4.7.7/zuluCrypt-gui/createfile.cpp
-===================================================================
---- zulucrypt-4.7.7.orig/zuluCrypt-gui/createfile.cpp
-+++ zulucrypt-4.7.7/zuluCrypt-gui/createfile.cpp
-@@ -162,7 +162,7 @@ void createfile::pbCreate()
+--- zulucrypt-4.8.0.orig/zuluCrypt-gui/createfile.cpp
++++ zulucrypt-4.8.0/zuluCrypt-gui/createfile.cpp
+@@ -165,7 +165,7 @@ void createfile::pbCreate()
  		return msg.ShowUIOK( tr( "ERROR!" ),tr( "File with the same name and at the destination folder already exist" ) ) ;
  	}
  	if( !utility::canCreateFile( filePath ) ){
@@ -63,36 +63,107 @@ Index: zulucrypt-4.7.7/zuluCrypt-gui/createfile.cpp
  		m_ui->lineEditFilePath->setFocus() ;
  		return ;
  	}
-Index: zulucrypt-4.7.7/zuluCrypt-gui/createkeyfile.cpp
+Index: zulucrypt-4.8.0/zuluCrypt-gui/password_dialog.cpp
 ===================================================================
---- zulucrypt-4.7.7.orig/zuluCrypt-gui/createkeyfile.cpp
-+++ zulucrypt-4.7.7/zuluCrypt-gui/createkeyfile.cpp
-@@ -156,7 +156,7 @@ void createkeyfile::pbCreate()
- 		return msg.ShowUIOK( tr( "ERROR!" ),tr( "File with the same name and at the destination folder already exist" ) ) ;
- 	}
- 	if( !utility::canCreateFile( path ) ){
--		msg.ShowUIOK( tr( "ERROR!" ),tr( "You dont seem to have writing access to the destination folder" ) ) ;
-+		msg.ShowUIOK( tr( "ERROR!" ),tr( "You don't seem to have writing access to the destination folder" ) ) ;
- 		m_ui->lineEditPath->setFocus() ;
- 		return ;
- 	}
-Index: zulucrypt-4.7.7/zuluCrypt-gui/zulucrypt.cpp
-===================================================================
---- zulucrypt-4.7.7.orig/zuluCrypt-gui/zulucrypt.cpp
-+++ zulucrypt-4.7.7/zuluCrypt-gui/zulucrypt.cpp
-@@ -88,7 +88,7 @@ void zuluCrypt::setLocalizationLanguage(
- 
- 	if( r == "en_US" ){
- 		/*
--		 *english_US language,its the default and hence dont load anything
-+		 *english_US language,its the default and hence don't load anything
- 		 */
+--- zulucrypt-4.8.0.orig/zuluCrypt-gui/password_dialog.cpp
++++ zulucrypt-4.8.0/zuluCrypt-gui/password_dialog.cpp
+@@ -704,7 +704,7 @@ void passwordDialog::openVolume()
+ 			 * most likely reason for getting here is if it crashed.
+ 			 */
+ 			DialogMsg msg( this ) ;
+-			msg.ShowUIOK( tr( "ERROR!" ),tr( "An error has occured and the volume could not be opened" ) ) ;
++			msg.ShowUIOK( tr( "ERROR!" ),tr( "An error has occurred and the volume could not be opened" ) ) ;
+ 			this->HideUI() ;
+ 		}
  	}else{
- 		translator->load( r.constData(),utility::localizationLanguagePath( app ) ) ;
-Index: zulucrypt-4.7.7/zuluMount-cli/main.c
+Index: zulucrypt-4.8.0/zuluCrypt-gui/lxqt_wallet/backend/lxqtwallet.h
 ===================================================================
---- zulucrypt-4.7.7.orig/zuluMount-cli/main.c
-+++ zulucrypt-4.7.7/zuluMount-cli/main.c
+--- zulucrypt-4.8.0.orig/zuluCrypt-gui/lxqt_wallet/backend/lxqtwallet.h
++++ zulucrypt-4.8.0/zuluCrypt-gui/lxqt_wallet/backend/lxqtwallet.h
+@@ -289,7 +289,7 @@ int main( int argc,char * argv[] )
+ 			if( r == lxqt_wallet_wrong_password ){
+ 				puts( "wrong password" ) ;
+ 			}else{
+-				puts( "general error has occured" ) ;
++				puts( "general error has occurred" ) ;
+ 			}
+ 		}else{
+ 			f = argv[ 3 ] ;
+@@ -315,7 +315,7 @@ int main( int argc,char * argv[] )
+ 			if( r == lxqt_wallet_wrong_password ){
+ 				puts( "wrong password" ) ;
+ 			}else{
+-				puts( "general error has occured" ) ;
++				puts( "general error has occurred" ) ;
+ 			}
+ 		}else{
+ 			f = argv[ 3 ] ;
+@@ -353,7 +353,7 @@ int main( int argc,char * argv[] )
+ 			if( r == lxqt_wallet_wrong_password ){
+ 				puts( "wrong password" ) ;
+ 			}else{
+-				puts( "general error has occured" ) ;
++				puts( "general error has occurred" ) ;
+ 			}
+ 		}
+ 	}else if( stringsAreEqual( command,"delete" ) ){
+@@ -377,7 +377,7 @@ int main( int argc,char * argv[] )
+ 			if( r == lxqt_wallet_wrong_password ){
+ 				puts( "wrong password" ) ;
+ 			}else{
+-				puts( "general error has occured" ) ;
++				puts( "general error has occurred" ) ;
+ 			}
+ 		}
+ 	}else if( stringsAreEqual( command,"change" ) ){
+@@ -401,7 +401,7 @@ int main( int argc,char * argv[] )
+ 			if( r == lxqt_wallet_wrong_password ){
+ 				puts( "wrong password" ) ;
+ 			}else{
+-				puts( "general error has occured" ) ;
++				puts( "general error has occurred" ) ;
+ 			}
+ 		}
+ 	}else if( stringsAreEqual( command,"value" ) ){
+@@ -429,7 +429,7 @@ int main( int argc,char * argv[] )
+ 			if( r == lxqt_wallet_wrong_password ){
+ 				puts( "wrong password" ) ;
+ 			}else{
+-				puts( "general error has occured" ) ;
++				puts( "general error has occurred" ) ;
+ 			}
+ 		}
+ 	}else if( stringsAreEqual( command,"version" ) ){
+Index: zulucrypt-4.8.0/zuluCrypt-gui/managevolumeheader.cpp
+===================================================================
+--- zulucrypt-4.8.0.orig/zuluCrypt-gui/managevolumeheader.cpp
++++ zulucrypt-4.8.0/zuluCrypt-gui/managevolumeheader.cpp
+@@ -505,7 +505,7 @@ void managevolumeheader::taskFinished( i
+ 		case 2 : msg.ShowUIOK( tr( "ERROR!" ),tr( "Oresented device is not a LUKS device" ) )					; break ;
+ 		case 3 : msg.ShowUIOK( tr( "ERROR!" ),tr( "Failed to perform requested operation" ) )					; break ;
+ 		case 4 : msg.ShowUIOK( tr( "ERROR!" ),tr( "Failed to perform requested operation" ) )					; break ;
+-		case 5 : msg.ShowUIOK( tr( "INFO!"  ),tr( "Operation terminater per user request" ) )					; break ;
++		case 5 : msg.ShowUIOK( tr( "INFO!"  ),tr( "Operation finished per user request" ) )					; break ;
+ 		case 6 : msg.ShowUIOK( tr( "ERROR!" ),tr( "Path to be used to create a back up file is occupied" ) ) 			; break ;
+ 		case 7 : msg.ShowUIOK( tr( "ERROR!" ),tr( "Failed to perform requested operation" ) )					; break ;
+ 		case 8 : msg.ShowUIOK( tr( "ERROR!" ),tr( "Insufficient privilege to open backup header file for reading" ) ) 		; break ;
+Index: zulucrypt-4.8.0/zuluCrypt-cli/bin/main.c
+===================================================================
+--- zulucrypt-4.8.0.orig/zuluCrypt-cli/bin/main.c
++++ zulucrypt-4.8.0/zuluCrypt-cli/bin/main.c
+@@ -626,7 +626,7 @@ int main( int argc,char * argv[] )
+ 		switch( zuluCryptGetDeviceFileProperties( device,&fd,&fd1,&dev,uid ) ){
+ 
+ 			case 0 : break ;
+-			case 1 : return zuluExit( 111,stl,stx,env,gettext( "ERROR: Devices in /dev/shm/ path is not suppored" ) ) ;
++			case 1 : return zuluExit( 111,stl,stx,env,gettext( "ERROR: Devices in /dev/shm/ path is not supported" ) ) ;
+ 			case 2 : return zuluExit( 112,stl,stx,env,gettext( "ERROR: Given path is a directory" ) ) ;
+ 			case 3 : return zuluExit( 113,stl,stx,env,gettext( "ERROR: A file can have only one hard link" ) ) ;
+ 			case 4 : return zuluExit( 113,stl,stx,env,gettext( "ERROR: Insufficient privilges to access the device" ) ) ;
+Index: zulucrypt-4.8.0/zuluMount-cli/main.c
+===================================================================
+--- zulucrypt-4.8.0.orig/zuluMount-cli/main.c
++++ zulucrypt-4.8.0/zuluMount-cli/main.c
 @@ -434,7 +434,7 @@ Possible reasons for getting the error a
  				 close( fd ) ;
  			 }
@@ -102,3 +173,42 @@ Index: zulucrypt-4.7.7/zuluMount-cli/main.c
  		case 2 : printf( gettext( "ERROR: Given path is a directory\n" ) ) ;  			return 221 ;
  		case 3 : printf( gettext( "ERROR: A file can have only one hard link\n" ) ) ;		return 222 ;
  		case 4 : printf( gettext( "ERROR: Insufficient privilges to access the device\n" ) ) ; 	return 223 ;
+Index: zulucrypt-4.8.0/zuluMount-gui/keydialog.cpp
+===================================================================
+--- zulucrypt-4.8.0.orig/zuluMount-gui/keydialog.cpp
++++ zulucrypt-4.8.0/zuluMount-gui/keydialog.cpp
+@@ -652,7 +652,7 @@ void keyDialog::openVolume()
+ 
+ 			DialogMsg msg( this ) ;
+ 
+-			msg.ShowUIOK( tr( "ERROR" ),tr( "An error has occured and the volume could not be opened" ) ) ;
++			msg.ShowUIOK( tr( "ERROR" ),tr( "An error has occurred and the volume could not be opened" ) ) ;
+ 			m_cancel() ;
+ 		}
+ 		this->HideUI() ;
+Index: zulucrypt-4.8.0/zuluCrypt-cli/bin/create_volumes.c
+===================================================================
+--- zulucrypt-4.8.0.orig/zuluCrypt-cli/bin/create_volumes.c
++++ zulucrypt-4.8.0/zuluCrypt-cli/bin/create_volumes.c
+@@ -68,7 +68,7 @@ static int zuluExit_1( const char * type
+ 
+ 	if( StringAtLeastOneMatch_1( type,"luks","tcrypt","truecrypt","veracrypt","vera","vcrypt",NULL ) ){
+ 
+-		printf( gettext( "\nCreating a backup of the \"%s\" volume header is strongly adviced.\n" ),type ) ;
++		printf( gettext( "\nCreating a backup of the \"%s\" volume header is strongly advised.\n" ),type ) ;
+ 		printf( gettext( "Please read documentation on why this is important\n\n" ) ) ;
+ 	}
+ 
+Index: zulucrypt-4.8.0/zuluCrypt-cli/bin/save_and_restore_volume_header.c
+===================================================================
+--- zulucrypt-4.8.0.orig/zuluCrypt-cli/bin/save_and_restore_volume_header.c
++++ zulucrypt-4.8.0/zuluCrypt-cli/bin/save_and_restore_volume_header.c
+@@ -44,7 +44,7 @@ static int zuluExit( int st,const char *
+ 		case 2 : printf( gettext( "ERROR: Presented device is not a LUKS device\n" ) ) 					; break ;
+ 		case 3 : printf( gettext( "ERROR: Failed to perform requested operation\n" ) )					; break ;
+ 		case 4 : printf( gettext( "ERROR: Failed to perform requested operation\n" ) )					; break ;
+-		case 5 : printf( gettext( "INFO: Operation terminater per user request\n" ) )					; break ;
++		case 5 : printf( gettext( "INFO: Operation fineshed per user request\n" ) )					; break ;
+ 		case 6 : printf( gettext( "ERROR: Path to be used to create a back up file is occupied or permission denied\n" ) ); break ;
+ 		case 7 : printf( gettext( "ERROR: Failed to perform requested operation\n" ) )					; break ;
+ 		case 8 : printf( gettext( "ERROR: Insufficient privilege to open backup header file for reading\n" ) )		; break ;
