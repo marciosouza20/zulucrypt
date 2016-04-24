@@ -1,3 +1,11 @@
+zulucrypt (4.8.0-2) unstable; urgency=medium
+
+  * Upload to unstable.
+  * debian/watch:
+      - Updated file.
+
+ -- Marcio de Souza Oliveira <m.desouza20@gmail.com>  Sun, 20 Mar 2016 20:12:38 -0300
+
 zulucrypt (4.8.0-1) experimental; urgency=medium
 
   * New upstream release.

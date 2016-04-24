@@ -1,2 +1,2 @@
 version=4
-https://github.com/mhogomchungu/zuluCrypt/releases/ .*zuluCrypt-(.*)\.tar\.bz2
+https://github.com/mhogomchungu/zuluCrypt/releases/ .*zuluCrypt-(.*)\.(?:tar|tgz)\.(?:gz|bz2|xz)
