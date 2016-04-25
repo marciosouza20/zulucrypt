@@ -1,3 +1,2 @@
 #!/bin/sh
-pkexec "/usr/bin/zuluCrypt-gui" -K "$@"
-
+pkexec "/usr/bin/zuluCrypt-gui" -K `id --user` "$@"

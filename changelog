@@ -1,3 +1,19 @@
+zulucrypt (4.9.0-1) experimental; urgency=medium
+
+  * New upstream release.
+  * Added the new plugin generic_header in package libzulucrypt-plugins.
+  * Created new symbol files for packages libzulucryptpluginmanager1.0.0
+    and libzulucrypt1.2.0.
+  * Updated the files zulu*-gui-pkexec to run with user ID that started
+    application.
+  * debian/patches:
+      - Updated patch fix_spelling.
+      - Removed the patch fix_manpage.
+  * debian/watch:
+      - Updated to avoid binary files in upstream directory.
+
+ -- Marcio de Souza Oliveira <m.desouza20@gmail.com>  Sun, 17 Apr 2016 20:29:18 +0000
+
 zulucrypt (4.8.0-2) unstable; urgency=medium
 
   * Upload to unstable.
