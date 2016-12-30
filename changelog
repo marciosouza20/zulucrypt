@@ -1,3 +1,21 @@
+zulucrypt (4.9.0-3) unstable; urgency=medium
+
+  * debian/control:
+      - Removed the build-depend libqtkeychain0. Thanks Adrian Bunk.
+        (Closes: #844751)
+  * debian/patches:
+      - Updated patch fix_spelling.
+ 
+ -- Marcio de Souza Oliveira <m.desouza20@gmail.com>  Thu, 08 Dec 2016 00:08:27 +0000
+
+zulucrypt (4.9.0-2) unstable; urgency=medium
+
+  * Upload to unstable.
+  * debian/control:
+      - Bumped Standards-Version to 3.9.8.
+
+ -- Marcio de Souza Oliveira <m.desouza20@gmail.com>  Fri, 06 May 2016 22:57:52 +0000
+
 zulucrypt (4.9.0-1) experimental; urgency=medium
 
   * New upstream release.

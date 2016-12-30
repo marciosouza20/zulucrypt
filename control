@@ -8,7 +8,6 @@ Build-Depends: debhelper (>= 9),
  libdevmapper-dev,
  libsecret-1-dev,
  libgcrypt20-dev,
- libqtkeychain0,
  qtkeychain-dev,
  libblkid-dev,
  libudev-dev,
@@ -20,7 +19,7 @@ Build-Depends: debhelper (>= 9),
  chrpath,
  cmake,
  bzip2
-Standards-Version: 3.9.7
+Standards-Version: 3.9.8
 Homepage: http://mhogomchungu.github.io/zuluCrypt
 Vcs-Git: https://github.com/marciosouza20/zulucrypt.git
 Vcs-Browser: https://github.com/marciosouza20/zulucrypt.git
