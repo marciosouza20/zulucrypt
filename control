@@ -29,8 +29,8 @@ Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: tool for encrypting volumes
  zulucrypt is a suite of applications for creating
- and managing volumes encrypted with luks, plain
- and truecrypt.
+ and managing volumes encrypted with luks, plain,
+ truecrypt and veracrypt.
  .
  zulucrypt-cli is a command line interface frontend
  to cryptsetup and tcplay and it is a tool that
@@ -44,8 +44,8 @@ Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: tool that manages encrypted volumes
  zulucrypt is a suite of applications for creating
- and managing volumes encrypted with luks, plain
- and truecrypt.
+ and managing volumes encrypted with luks, plain,
+ truecrypt and veracrypt.
  .
  zulumount-cli is a command line interface that has
  a primary mission of opening and closing encrypted
@@ -58,8 +58,8 @@ Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, zulucrypt-cli
 Description: graphical front end for zulucrypt-cli
  zulucrypt is a suite of applications for creating
- and managing volumes encrypted with luks, plain
- and truecrypt.
+ and managing volumes encrypted with luks, plain,
+ truecrypt and veracrypt.
  .
  zulucrypt-gui is a front end for zulucrypt-cli.
  This way all activities can be performed easily
@@ -68,22 +68,27 @@ Description: graphical front end for zulucrypt-cli
 Package: zulumount-gui
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, zulumount-cli
+Suggests: cryfs, encfs, gocryptfs, ecryptfs-utils
 Description: graphical front end for zulumount-cli
  zulucrypt is a suite of applications for creating
- and managing volumes encrypted with luks, plain
- and truecrypt.
+ and managing volumes encrypted with luks, plain,
+ truecrypt and veracrypt.
  .
  zuluMount-gui is a front end for zuluMount-cli.
  This way all activities the zulumount-cli can
  be performed easily by the graphical interface.
+ .
+ zuluMount-gui can unlock cryfs, encfs, gocryptfs
+ and ecryptfs.
+ 
 
 Package: zulusafe-cli
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: cli that manages encrypted volumes
  zulucrypt is a suite of applications for creating
- and managing volumes encrypted with luks, plain
- and truecrypt.
+ and managing volumes encrypted with luks, plain,
+ truecrypt and veracrypt.
  .
  zulusafe-cli is a tool responsible for the safe
  storage files in a wallet. Added files to the
@@ -99,8 +104,8 @@ Pre-Depends: ${misc:Pre-Depends}
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: provide the main functions of zulucrypt
  zulucrypt is a suite of applications for creating
- and managing volumes encrypted with luks, plain
- and truecrypt.
+ and managing volumes encrypted with luks, plain,
+ truecrypt and veracrypt.
  .
  This package provides the shared library, that
  has essential functions for some tools in
@@ -112,8 +117,8 @@ Architecture: any
 Depends: ${misc:Depends},libzulucrypt-exe1.2.0 (= ${binary:Version})
 Description: development files for the libzulucrypt-exe
  zulucrypt is a suite of applications for creating
- and managing volumes encrypted with luks, plain
- and truecrypt.
+ and managing volumes encrypted with luks, plain,
+ truecrypt and veracrypt.
  .
  This package provides the development files for the
  libzulucrypt-exe library.
@@ -126,8 +131,8 @@ Pre-Depends: ${misc:Pre-Depends}
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: provide the functions of zulumount
  zulucrypt is a suite of applications for creating
- and managing volumes encrypted with luks, plain
- and truecrypt.
+ and managing volumes encrypted with luks, plain,
+ truecrypt and veracrypt.
  .
  This package provides the shared library, that
  has main functions to zulumount.
@@ -138,8 +143,8 @@ Architecture: any
 Depends: ${misc:Depends},libzulucrypt1.2.0 (= ${binary:Version})
 Description: development files for libzulucrypt-1.2.0
  zulucrypt is a suite of applications for creating
- and managing volumes encrypted with luks, plain
- and truecrypt.
+ and managing volumes encrypted with luks, plain,
+ truecrypt and veracrypt.
  .
  This package provides the development files for the
  libzulucrypt library.
@@ -152,8 +157,8 @@ Pre-Depends: ${misc:Pre-Depends}
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: provides support for plugins
  zulucrypt is a suite of applications for creating
- and managing volumes encrypted with luks, plain
- and truecrypt.
+ and managing volumes encrypted with luks, plain,
+ truecrypt and veracrypt.
  .
  This package provides the shared library, that
  have support for plugins and allows the integration
@@ -165,8 +170,8 @@ Architecture: any
 Depends: ${misc:Depends},libzulucryptpluginmanager1.0.0 (= ${binary:Version})
 Description: development files for libzulucryptpluginmanager
  zulucrypt is a suite of applications for creating
- and managing volumes encrypted with luks, plain
- and truecrypt.
+ and managing volumes encrypted with luks, plain,
+ truecrypt and veracrypt.
  .
  This package provides development files for the
  libzulucryptpluginmanager library.
@@ -179,13 +184,14 @@ Pre-Depends: ${misc:Pre-Depends}
 Depends: ${shlibs:Depends}, ${misc:Depends}, libzulucryptpluginmanager1.0.0 (= ${binary:Version})
 Description: collection of plugins for zulucrypt
  zulucrypt is a suite of applications for creating
- and managing volumes encrypted with luks, plain
- and truecrypt.
+ and managing volumes encrypted with luks, plain,
+ truecrypt and veracrypt.
  .
  Collection of plugins that increase the
  functionality of zulucrypt.
  .
  Included plugins are:
+  generic_header
   gpg
   hmac
   keydialog-qt

@@ -1,2 +1,3 @@
 #!/bin/sh
-pkexec "/usr/bin/zuluMount-gui" -K `id --user` "$@"
+pkexec /usr/bin/zuluMount-gui -K $UID $*
+

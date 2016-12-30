@@ -9,8 +9,9 @@ DEB_HOST_MULTIARCH ?= $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
 	dh $@ --parallel
 
 override_dh_auto_configure:
-	dh_auto_configure -- -DCMAKE_INSTALL_PREFIX=/usr/ -DLIB_SUFFIX=lib/$(DEB_HOST_MULTIARCH) -DUDEVSUPPORT=true -DQT5=true
+	dh_auto_configure -- -DCMAKE_INSTALL_PREFIX=/usr/ -DLIB_SUFFIX=lib/$(DEB_HOST_MULTIARCH) -DUDEVSUPPORT=true -DQT5=true -DINTERNAL_ZULUPLAY=true -DUSE_POLKIT=true
 override_dh_install:
 	chrpath -d $(CURDIR)/debian/tmp/usr/lib*/$(DEB_HOST_MULTIARCH)/zuluCrypt/*
-	chrpath -d $(CURDIR)/debian/tmp/usr/bin/*
+	chrpath -d $(CURDIR)/debian/tmp/usr/bin/*gui
+	chrpath -d $(CURDIR)/debian/tmp/usr/bin/*cli
 	dh_install
