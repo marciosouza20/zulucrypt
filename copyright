@@ -3,7 +3,7 @@ Upstream-Name: zulucrypt
 Source: http://mhogomchungu.github.io/zuluCrypt/
 
 Files: *
-Copyright: 2011-2015 Francis Banyikwa, aka Mhogo Mchungu <mhogomchungu@gmail.com>
+Copyright: 2011-2017 Francis Banyikwa, aka Mhogo Mchungu <mhogomchungu@gmail.com>
 License: GPL-2+
 
 Files: debian.upstream/*

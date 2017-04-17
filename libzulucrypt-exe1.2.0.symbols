@@ -12,6 +12,7 @@ libzuluCrypt-exe.so.1.2.0 libzulucrypt-exe1.2.0 #MINVER#
  pluginPath@Base 5.0.2
  sigTERMhandler@Base 5.0.2
  tcryptTestVolume@Base 5.0.2
+ veraCryptVolumePIMValue@Base 5.1.0
  zuluCryptBindMountVolume@Base 5.0.2
  zuluCryptBindSharedMountPointPathTaken@Base 5.0.2
  zuluCryptBindUnmountVolume@Base 5.0.2

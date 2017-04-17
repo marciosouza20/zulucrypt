@@ -1,3 +1,15 @@
+zulucrypt (5.1.0-1) experimental; urgency=medium
+
+  * New upstream release.
+  * debian/copyright:
+      - Updated file.
+  * debian/patches:
+      - Updated patch fix_spelling.
+  * Updated the file libzulucrypt-exe1.2.0.symbols.
+  * Updated the files zulu*-gui.install to install icons hicolor.
+
+ -- Marcio de Souza Oliveira <m.desouza20@gmail.com>  Thu, 13 Apr 2017 15:51:50 +0000
+
 zulucrypt (5.0.2-2) unstable; urgency=medium
 
   * Updated the files zulu*-gui-pkexec to use /bin/sh instead
