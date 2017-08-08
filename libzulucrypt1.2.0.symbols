@@ -297,6 +297,7 @@ libzuluCrypt.so.1.2.0 libzulucrypt1.2.0 #MINVER#
  zuluCryptDeviceFromUUID@Base 5.0.2
  zuluCryptDeviceHasAgivenFileSystem@Base 5.0.2
  zuluCryptDeviceHasEncryptedFileSystem@Base 5.0.2
+ zuluCryptDisableMetadataLocking@Base 5.2.0
  zuluCryptEmptySlots@Base 5.0.2
  zuluCryptEncodeMountEntry@Base 5.0.2
  zuluCryptFileSystemIsFUSEbased@Base 5.0.2
@@ -351,6 +352,7 @@ libzuluCrypt.so.1.2.0 libzulucrypt1.2.0 #MINVER#
  zuluCryptPathIsNotValid_0@Base 5.0.2
  zuluCryptPathIsValid@Base 5.0.2
  zuluCryptPathStartsWith@Base 5.0.2
+ zuluCryptPrintLogOutPut@Base 5.2.0
  zuluCryptRealPath@Base 5.0.2
  zuluCryptRemoveKey@Base 5.0.2
  zuluCryptResolveDMPath@Base 5.0.2

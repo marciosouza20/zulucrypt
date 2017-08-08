@@ -1,3 +1,20 @@
+zulucrypt (5.2.0-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Bumped DH level to 10.
+  * debian/control:
+      - Bumped Standards-Version to 4.0.0.
+      - Updated Build-Depends.
+      - Updated file.
+  * debian/copyright:
+      - Updated file.
+  * debian/rules:
+      - Removed option --parallel.
+      - Disabled the polkit support at build time.
+  * Updated the file libzulucrypt1.2.0.symbols.
+
+ -- Marcio de Souza Oliveira <m.desouza20@gmail.com>  Fri, 04 Aug 2017 22:32:16 +0000
+
 zulucrypt (5.1.0-1) experimental; urgency=medium
 
   * New upstream release.

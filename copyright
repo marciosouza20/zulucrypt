@@ -22,7 +22,7 @@ Files: zuluCrypt-cli/lib/includes.h
 Copyright: 2011-2015 Francis Banyikwa <mhogomchungu@gmail.com>
 License: GPL-3+
 
-Files: zuluCrypt-gui/lxqt_wallet/*
+Files: external_libraries/lxqt_wallet/*
 Copyright: 2013-2015 Francis Banyikwa <mhogomchungu@gmail.com>
 License: BSD-2-clause
 
