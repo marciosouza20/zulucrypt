@@ -1,3 +1,25 @@
+zulucrypt (5.2.0-2) unstable; urgency=medium
+
+  * Created the files zulupolkit.install and zuluPolkit.1.
+  * debian/control:
+      - Bumped Standards-Version to 4.1.0.
+      - Created the package zulupolkit to acomodated the new tool
+        zuluPolkit.
+      - Removed qtkeychain-dev the Build-Depends.
+        Thanks Mhogo Mchungu (Closes: #875291).
+  * debian/rules:
+      - Enabled the polkit support at build time.
+      - Updated file.
+  * Removed the files because are unnecessary with zulupolkit:
+      - The files zulu*-gui-pkexec and zulu*-gui-pkexec.1.
+      - The files org.debian.pkexec.zulu*-gui.policy.
+      - The files zulu*-gui.links.
+  * Removed the files zulu*-gui.menu.
+  * Updated the files zulu*-gui.desktop.
+  * Updated the files zulu*-gui.install.
+
+ -- Marcio de Souza Oliveira <m.desouza20@gmail.com>  Sun, 10 Sep 2017 23:32:46 +0000
+
 zulucrypt (5.2.0-1) unstable; urgency=medium
 
   * New upstream release.

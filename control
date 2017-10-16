@@ -8,7 +8,6 @@ Build-Depends: debhelper (>= 10),
  libdevmapper-dev,
  libsecret-1-dev,
  libgcrypt20-dev,
- qtkeychain-dev,
  libblkid-dev,
  libudev-dev,
  qtbase5-dev,
@@ -19,7 +18,7 @@ Build-Depends: debhelper (>= 10),
  chrpath,
  cmake,
  bzip2
-Standards-Version: 4.0.0
+Standards-Version: 4.1.0
 Homepage: http://mhogomchungu.github.io/zuluCrypt
 Vcs-Git: https://github.com/marciosouza20/zulucrypt.git
 Vcs-Browser: https://github.com/marciosouza20/zulucrypt.git
@@ -55,7 +54,7 @@ Description: tool that manages encrypted volumes
 
 Package: zulucrypt-gui
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, zulucrypt-cli
+Depends: ${shlibs:Depends}, ${misc:Depends}, zulucrypt-cli, zulupolkit
 Description: graphical front end for zulucrypt-cli
  zulucrypt is a suite of applications for creating
  and managing volumes encrypted with luks, plain,
@@ -67,7 +66,7 @@ Description: graphical front end for zulucrypt-cli
 
 Package: zulumount-gui
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, zulumount-cli
+Depends: ${shlibs:Depends}, ${misc:Depends}, zulumount-cli, zulupolkit
 Suggests: cryfs, encfs, gocryptfs, ecryptfs-utils
 Description: graphical front end for zulumount-cli
  zulucrypt is a suite of applications for creating
@@ -81,6 +80,18 @@ Description: graphical front end for zulumount-cli
  zuluMount-gui can unlock cryfs, encfs, gocryptfs
  and ecryptfs.
 
+Package: zulupolkit
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: handler the polkit privileges
+ zulucrypt is a suite of applications for creating
+ and managing volumes encrypted with luks, plain,
+ truecrypt and veracrypt.
+ .
+ zulupolkit is the tool that handles elevation of
+ privileges, using polkit, to zulucrypt-gui and
+ zulumount-gui.
+ 
 Package: zulusafe-cli
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
