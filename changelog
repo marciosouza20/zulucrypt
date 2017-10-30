@@ -1,3 +1,12 @@
+zulucrypt (5.2.0-3) unstable; urgency=medium
+
+  * debian/control:
+      - Added the policykit-1 as dependency of zulupolkit.
+        Thanks Simon McVittie (Closes: #878801).
+      - Bumped Standards-Version to 4.1.1.
+
+ -- Marcio de Souza Oliveira <m.desouza20@gmail.com>  Wed, 25 Oct 2017 23:53:26 +0000
+
 zulucrypt (5.2.0-2) unstable; urgency=medium
 
   * Created the files zulupolkit.install and zuluPolkit.1.

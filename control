@@ -18,7 +18,7 @@ Build-Depends: debhelper (>= 10),
  chrpath,
  cmake,
  bzip2
-Standards-Version: 4.1.0
+Standards-Version: 4.1.1
 Homepage: http://mhogomchungu.github.io/zuluCrypt
 Vcs-Git: https://github.com/marciosouza20/zulucrypt.git
 Vcs-Browser: https://github.com/marciosouza20/zulucrypt.git
@@ -82,7 +82,7 @@ Description: graphical front end for zulumount-cli
 
 Package: zulupolkit
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends}, policykit-1
 Description: handler the polkit privileges
  zulucrypt is a suite of applications for creating
  and managing volumes encrypted with luks, plain,
