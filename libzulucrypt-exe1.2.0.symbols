@@ -44,6 +44,8 @@ libzuluCrypt-exe.so.1.2.0 libzulucrypt-exe1.2.0 #MINVER#
  zuluCryptExe@Base 5.0.2
  zuluCryptExeFileDecrypt@Base 5.0.2
  zuluCryptExeFileEncrypt@Base 5.0.2
+ zuluCryptExeOriginalUserIsNotRoot@Base 5.4.0
+ zuluCryptExeSetOriginalUID@Base 5.4.0
  zuluCryptGetAListOfAllVolumes@Base 5.0.2
  zuluCryptGetPartitionFromConfigFile@Base 5.0.2
  zuluCryptGetPartitionFromCrypttab@Base 5.0.2
@@ -59,6 +61,7 @@ libzuluCrypt-exe.so.1.2.0 libzulucrypt-exe1.2.0 #MINVER#
  zuluCryptPrintPartitions@Base 5.0.2
  zuluCryptReuseMountPoint@Base 5.0.2
  zuluCryptRunTest@Base 5.0.2
+ zuluCryptRunTimePath@Base 5.4.0
  zuluCryptSecurityConvertUID@Base 5.0.2
  zuluCryptSecurityDropElevatedPrivileges@Base 5.0.2
  zuluCryptSecurityGainElevatedPrivileges@Base 5.0.2

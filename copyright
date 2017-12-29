@@ -30,6 +30,10 @@ Files: external_libraries/lxqt_wallet/*
 Copyright: 2013-2016 Francis Banyikwa <mhogomchungu@gmail.com>
 License: BSD-2-clause
 
+Files: external_libraries/tasks/*
+Copyright: 2014-2017 Francis Banyikwa <mhogomchungu@gmail.com>
+License: BSD-2-clause
+
 Files: external_libraries/zuluplay/*
 Copyright: 2014 Alex Hornung <alex@alexhornung.com>
 License: BSD-2-clause
@@ -49,7 +53,7 @@ Copyright: 1986 Gary S. Brown
 License: special2
 
 Files: debian/*
-Copyright: 2015-2016 Marcio de Souza Oliveira <m.desouza20@gmail.com>
+Copyright: 2015-2017 Marcio de Souza Oliveira <m.desouza20@gmail.com>
 License: GPL-3+
 
 License: GPL-2+
