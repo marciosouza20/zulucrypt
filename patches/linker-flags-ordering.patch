@@ -1,0 +1,20 @@
+Author: Ahzod
+Description: fix ordering of linker flags for zuluCrypt library
+ Static libraries have to be listed before dynamic ones. Otherwise, when
+ compiling with the '-Wl,--as-needed' flag, the linker doesn't consider the
+ functions used in zuluplay-static when determining that libgcrypt is not used
+ and thus need not be linked against.
+Origin: https://github.com/mhogomchungu/zuluCrypt/pull/112
+Applied-Upstream: https://github.com/mhogomchungu/zuluCrypt/commit/b38a6f8242a5b751fd3d943a33a20714e5f68197
+Bug-Debian: http://bugs.debian.org/922038
+--- a/zuluCrypt-cli/CMakeLists.txt
++++ b/zuluCrypt-cli/CMakeLists.txt
+@@ -121,7 +121,7 @@
+  set_target_properties( zuluCrypt-exe PROPERTIES SOVERSION ${LIB_VERSION} )
+ 
+  if( STATIC_ZULUPLAY )
+-	TARGET_LINK_LIBRARIES( zuluCrypt     String StringList Process ${cryptsetup_lib} ${blkid} ${uuid_lib} ${devmapper_lib} -lgcrypt zuluplay-static )
++	TARGET_LINK_LIBRARIES( zuluCrypt     String StringList Process zuluplay-static ${cryptsetup_lib} ${blkid} ${uuid_lib} ${devmapper_lib} -lgcrypt )
+  else()
+ 	TARGET_LINK_LIBRARIES( zuluCrypt     String StringList Process ${cryptsetup_lib} ${blkid} ${uuid_lib} ${devmapper_lib} ${TCPLAY_LIB} -lgcrypt -lzuluplay )
+  endif()
